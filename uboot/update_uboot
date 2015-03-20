@@ -1,0 +1,71 @@
+#!/bin/bash
+
+
+if [ "$(id -u)" != "0" ]; then
+   echo "Script must be run as root !"
+   exit 0
+fi
+
+echo ""
+date
+echo "************************"
+echo "Update u-boot on SD Card"
+echo "************************"
+echo ""
+
+# =====================================================
+# ==== P A R A M E T E R S ============================
+# =====================================================
+
+# *****************************************************
+# Set sdcard block device, e.g. sdc, sdi, ...
+# You can check with sudo blkid which drive to use
+# Partitions on SDCard MUST be UNMOUNTED
+# *****************************************************
+sdcard="sdX"
+
+
+# *****************************************************
+# Path to odroid u-boot files
+# *****************************************************
+BL1="bl1.bin.hardkernel"
+UBOOT="u-boot.bin"
+
+# ^^^^ P A R A M E T E R S ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+if [ ! -f $BL1 ]; then
+    echo "Error: $BL1 is not exist."
+    exit 0
+fi
+
+if [ ! -f $UBOOT ]; then
+    echo "Error: $UBOOT is not exist."
+    exit 0
+fi
+
+
+echo ""
+echo "Updating u-boot on $sdcard ..."
+dd if=$BL1 of=/dev/${sdcard} bs=1 count=442 > /dev/null 2>&1
+if [ $? -ne 0 ]; then
+    echo "ERROR installing u-boot."
+    exit 0
+fi
+dd if=$BL1 of=/dev/${sdcard} bs=512 skip=1 seek=1 > /dev/null 2>&1
+if [ $? -ne 0 ]; then
+    echo "ERROR installing u-boot."
+    exit 0
+fi
+dd if=$UBOOT of=/dev/${sdcard} bs=512 seek=64 > /dev/null 2>&1
+if [ $? -ne 0 ]; then
+    echo "ERROR installing u-boot."
+    exit 0
+fi
+sync
+
+echo ""
+echo "U-boot updated on $sdcard."
+# -------------------------------------------------------------------
+    
+# -------------------------------------------------------------------
