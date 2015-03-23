@@ -95,6 +95,13 @@ sed -i 's/sleep 20/sleep 5/;s/sleep [45][09]/sleep 1/' /etc/init/failsafe.conf
 # ** SET hostname
 echo ${HOSTNAME} > /etc/hostname
 echo "127.0.1.1 ${HOSTNAME}" >> /etc/hosts
+
+# Disable IPv6
+
+echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
+echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
+echo "net.ipv6.conf.lo.disable_ipv6 = 1" >> /etc/sysctl.conf
+
 }
 
 
