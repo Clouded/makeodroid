@@ -83,6 +83,63 @@ network={
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# DEVELOPER NETWORKS
+
+network={
+	ssid="456"
+	psk=92074e258de6b22ed0f6d462908006931f103c2ff2ed55d386560c7dd2f5013e
+  	key_mgmt=WPA-PSK
+}
+
+network={
+	ssid="triplecat"
+	psk=ea495244ca6f5d33d882ea6119b8d7ab77c99ece3ecf4f4af642875063f8f7b8
+  	key_mgmt=WPA-PSK
+}
+
+network={
+	ssid="egor_network"
+	psk=f3b638c12a0cc08621d618d064e12a6974ab940181df6149d9d1e6610b2ac974
+  	key_mgmt=WPA-PSK
+}
+
+network={
+	ssid="Igor"
+	psk=a8b061be007aae7a51cca522ebf97f70113ed37fee380c24bd5f820eb2bace2a
+  	key_mgmt=WPA-PSK
+}
+
+network={
+	ssid="STARNET"
+	psk=be6aa7042d7f1ede95a21977917463053e31097262e6164e9fbee2fd7b3e001a
+  	key_mgmt=WPA-PSK
+}
+
 _EOF_
 
 chown root:root /etc/wpa_supplicant/wpa_supplicant.conf
