@@ -266,9 +266,8 @@ else
 fi
 
 # ** INSTALL more packages ....
-# apt-get -y install net-tools wireless-tools wpasupplicant axel build-essential git whiptail unzip
 echo "Installing more packages..."
-apt-get -y -q install nano mc htop man-db tmux dbus btrfs-tools --no-install-recommends >> $_LOGFILE 2>&1 &
+apt-get -y -q install net-tools wireless-tools wpasupplicant build-essential axel git whiptail unzip nano mc htop man-db tmux dbus stress socat vim screen usbutils btrfs-tools i2c-tools python-smbus rt-tests --no-install-recommends >> $_LOGFILE 2>&1 &
 pid=$!
 proc_wait $pid "please wait"
 apt-get clean >> $_LOGFILE 2>&1
