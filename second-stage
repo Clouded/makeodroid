@@ -8,7 +8,7 @@
 # *****************************************************************
 # Set hostname, user to be created & root and user passwords      *
 # *****************************************************************
-HOSTNAME="OdroidC1"
+HOSTNAME="odroid-navio"
 
 USER="odroid"
 
