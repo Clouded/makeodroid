@@ -358,6 +358,14 @@ if [ -f /etc/ssh/sshd_config ]; then
     mv /tmp/sshd_config /etc/ssh/sshd_config
 fi
 
+#***************************
+# Enable SPI and I2C modules
+#***************************
+
+echo "spicc" >> /etc/modules
+echo "spidev" >> /etc/modules
+echo "aml_i2c" >> /etc/modules
+
 
 killall -KILL ntpd > /dev/null 2>&1
 killall -KILL smbd > /dev/null 2>&1
