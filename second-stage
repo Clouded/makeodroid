@@ -55,7 +55,38 @@ cat >> /etc/network/interfaces << _EOF_
 
 auto eth0
 iface eth0 inet dhcp
+
+auto wlan0 
+allow-hotplug wlan0
+iface wlan0 inet manual
+wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+iface default inet dhcp
 _EOF_
+
+mkdir /etc/wpa_supplicant
+touch /etc/wpa_supplicant/wpa_supplicant.conf
+cat >> /etc/wpa_supplicant/wpa_supplicant.conf << _EOF_
+
+ctrl_interface=/var/run/wpa_supplicant
+ctrl_interface_group=netdev
+update_config=1
+
+# DEFAULT NETWORK
+
+network={
+  	ssid="emlidltd"
+	psk="emlidltd"
+	key_mgmt=WPA-PSK
+}
+
+# ADD YOUR NETWORK HERE
+
+
+
+_EOF_
+
+chown root:root /etc/wpa_supplicant/wpa_supplicant.conf
+chmod 600 /etc/wpa_supplicant/wpa_supplicant.conf
 
 # ** SET hostname
 echo ${HOSTNAME} > /etc/hostname
