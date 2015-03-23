@@ -88,6 +88,10 @@ _EOF_
 chown root:root /etc/wpa_supplicant/wpa_supplicant.conf
 chmod 600 /etc/wpa_supplicant/wpa_supplicant.conf
 
+# Disable crazy sleep times
+
+sed -i 's/sleep 20/sleep 5/;s/sleep [45][09]/sleep 1/' /etc/init/failsafe.conf
+
 # ** SET hostname
 echo ${HOSTNAME} > /etc/hostname
 }
