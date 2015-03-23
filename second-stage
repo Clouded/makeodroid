@@ -22,8 +22,8 @@ _timezone="Etc/UTC"
 
 # IF YOU WANT TO INSTALL THE LANGUAGE DIFFERENT THEN THE HOST's:
 # COMMENT FOR DEFAULT (HOST) settings
-#LANGUAGE="en"
-#LANG="en_US.UTF-8"
+LANGUAGE="en"
+LANG="en_US.UTF-8"
 # *****************************************************************
 
 
