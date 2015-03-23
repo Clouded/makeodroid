@@ -374,12 +374,12 @@ echo "spidev" >> /etc/modules
 echo "aml_i2c" >> /etc/modules
 
 #***************************
-# Add user to i2c and dialout groups
+# Add user to i2c, dialout and video groups
 #***************************
 
 adduser $USER i2c 
 adduser $USER dialout
-
+adduser $USER video
 
 killall -KILL ntpd > /dev/null 2>&1
 killall -KILL smbd > /dev/null 2>&1
