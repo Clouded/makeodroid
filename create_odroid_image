@@ -74,8 +74,8 @@ linuxsize=900
 
 # === Ubuntu ===
 #distro="precise"
-#distro="trusty"
-distro="utopic"
+distro="trusty"
+#distro="utopic"
 repo="http://ports.ubuntu.com/ubuntu-ports"
 
 # === Debian ===
