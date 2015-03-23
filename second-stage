@@ -17,8 +17,8 @@ ROOTPASS="odroid"
 USERPASS="odroid"
 
 # Set timezone, for default (HOST'S) set  _timezone=""
-#_timezone="Etc/UTC"
-_timezone=""
+_timezone="Etc/UTC"
+#_timezone=""
 
 # IF YOU WANT TO INSTALL THE LANGUAGE DIFFERENT THEN THE HOST's:
 # COMMENT FOR DEFAULT (HOST) settings
