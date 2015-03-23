@@ -366,6 +366,13 @@ echo "spicc" >> /etc/modules
 echo "spidev" >> /etc/modules
 echo "aml_i2c" >> /etc/modules
 
+#***************************
+# Add user to i2c and dialout groups
+#***************************
+
+adduser $USER i2c 
+adduser $USER dialout
+
 
 killall -KILL ntpd > /dev/null 2>&1
 killall -KILL smbd > /dev/null 2>&1
