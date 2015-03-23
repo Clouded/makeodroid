@@ -41,7 +41,7 @@ cd $_DIR
 # otherwyse it will be formated with specified format *
 # *****************************************************
 #image_name=""
-image_name="mini"
+image_name="emlid-rt"
 #image_name="/dev/sdX2"
 
 
