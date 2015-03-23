@@ -282,7 +282,7 @@ apt-get clean >> $_LOGFILE 2>&1
 
 # ** INSTALL essential packages
 echo "Installing base packages..."
-apt-get -y -q install apt-utils locales dialog sudo isc-dhcp-client udev netbase ifupdown iproute openssh-server iputils-ping wget curl ntpdate ntp less tzdata console-common module-init-tools lsb-release u-boot-tools initramfs-tools keyboard-configuration console-setup xz-utils fbset --no-install-recommends >> $_LOGFILE 2>&1 &
+apt-get -y -q install apt-utils locales dialog sudo isc-dhcp-client udev netbase ifupdown iproute openssh-server iputils-ping wget curl less tzdata console-common module-init-tools lsb-release u-boot-tools initramfs-tools keyboard-configuration console-setup xz-utils fbset --no-install-recommends >> $_LOGFILE 2>&1 &
 pid=$!
 proc_wait $pid "please be patient"
 apt-get clean >> $_LOGFILE 2>&1
