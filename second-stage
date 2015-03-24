@@ -315,6 +315,8 @@ pid=$!
 proc_wait $pid "please wait"
 apt-get clean >> $_LOGFILE 2>&1
 
+pip install spidev
+
 # === install Hardkernel's packages ======
 echo "Installing kernel..."
 touch /boot/uImage >> $_LOGFILE 2>&1
